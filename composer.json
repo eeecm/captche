@@ -1,0 +1,16 @@
+{
+    "name": "wd/captche",
+    "description": "API",
+    "authors": [
+        {
+            "name": "wangdong",
+            "email": "wd@xunmatong.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Wd\\": "src/"
+        }
+    }
+}
