@@ -40,6 +40,11 @@ class Captche{
     public function __get($name){
         return $this->config[$name];
     }
+    /**
+     * 获取验证码
+     * @return key:秘钥
+     * @return img:base64图片
+     */
     public function entry(){
         // 图片宽(px)
         $this->imageW || $this->imageW = $this->length * $this->fontSize * 1.5 + $this->length * $this->fontSize / 2;
@@ -102,6 +107,14 @@ class Captche{
             'key'=>$key,
             'img'=>$image_data_base64,
         ];
+    }
+    /**
+     * 效验验证码
+     * @param captche
+     * @param hash
+     */
+    public function verify($captche,$hash){
+        return password_verify(strtoupper($captche),$hash);
     }
 
     /**
